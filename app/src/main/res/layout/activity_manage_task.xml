@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:theme="@style/Custom_Theme"
+    tools:context=".view.task.ManageTaskActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_task_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="Nama task"
+                android:textColorHint="@color/grey_soft"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                app:errorIconDrawable="@null">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_task_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_subject_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="Subject task"
+                android:textColorHint="@color/grey_soft"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                app:errorIconDrawable="@null">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_subject_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_desc"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="Deskripsi Task"
+                android:textColorHint="@color/grey_soft"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                app:errorIconDrawable="@null">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:inputType="textMultiLine"
+                    android:maxLines="2"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_date"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:expandedHintEnabled="false"
+                android:hint="Date"
+                android:textColorHint="@color/grey_soft"
+                app:startIconTint="@color/color_primary"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                app:errorIconDrawable="@null">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_status"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="Status"
+                android:visibility="gone"
+                app:endIconDrawable="@drawable/ic_arrow_down"
+                app:endIconTint="@color/grey_soft"
+                android:textColorHint="@color/grey_soft"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:expandedHintEnabled="false"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                app:errorIconDrawable="@null">
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/et_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:hint="Pilih Status"
+                    android:textColorHint="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_remainder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="Remainders"
+                android:textColorHint="@color/grey_soft"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                app:errorIconDrawable="@null">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_remainders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:inputType="number"
+                    android:text="15"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/holder_iv"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                app:cardElevation="0dp"
+                android:layout_marginTop="8dp">
+                <ImageView
+                    android:id="@+id/iv_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_placeholder"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_select_photo"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:minHeight="0dp"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/bg_btn_disable"
+                    android:textColor="@color/color_primary"
+                    android:textSize="14sp"
+                    android:text="Pilih Gambar"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp">
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/white"
+            android:minHeight="0dp"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/bg_btn_setup"
+            android:textSize="14dp"
+            android:textAllCaps="false"
+            android:text="Tambah"/>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
