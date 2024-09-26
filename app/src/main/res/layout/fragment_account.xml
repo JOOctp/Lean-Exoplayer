@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:theme="@style/Custom_Theme"
+    tools:context=".view.home.fragment.AccountFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/holder_iv"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/btn_select_photo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/grey_soft_light">
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_placeholder"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btn_select_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minHeight="0dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_btn_disable"
+                android:textColor="@color/color_primary"
+                android:textSize="14sp"
+                android:text="Pilih Gambar"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Nama User"
+                android:textColorHint="@color/grey_soft"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                app:errorIconDrawable="@null">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_email_user"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="Email User"
+                android:textColorHint="@color/grey_soft"
+                app:hintTextColor="@color/grey_soft"
+                app:boxStrokeColor="@color/grey_soft_light"
+                app:counterTextColor="@color/grey_soft"
+                app:boxStrokeErrorColor="@color/red_error"
+                app:errorTextColor="@color/red_error"
+                android:enabled="false"
+                app:errorIconDrawable="@null">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:inputType="text"
+                    android:enabled="false"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_primary"
+                android:minHeight="0dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_btn_disable"
+                android:textSize="14dp"
+                android:textAllCaps="false"
+                android:text="Update Data"/>
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:minHeight="0dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_btn_setup"
+                android:textSize="14dp"
+                android:textAllCaps="false"
+                android:text="Logout"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
